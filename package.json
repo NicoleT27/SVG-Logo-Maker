@@ -1,0 +1,29 @@
+{
+  "name": "svg-logo-maker",
+  "version": "1.0.0",
+  "description": "svg logo maker with inquierer and jest,",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NicoleT27/SVG-Logo-Maker.git"
+  },
+  "keywords": [
+    "jest",
+    "inquirer",
+    "svg",
+    "node"
+  ],
+  "author": "Nicole Torres",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NicoleT27/SVG-Logo-Maker/issues"
+  },
+  "homepage": "https://github.com/NicoleT27/SVG-Logo-Maker#readme",
+  "dependencies": {
+    "inquirer": "^9.2.10",
+    "jest": "^29.6.4"
+  }
+}
