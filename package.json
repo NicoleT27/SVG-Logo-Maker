@@ -18,12 +18,14 @@
   ],
   "author": "Nicole Torres",
   "license": "ISC",
+  "dependencies": {
+    "inquirer": "^8.2.4"
+  },
   "bugs": {
     "url": "https://github.com/NicoleT27/SVG-Logo-Maker/issues"
   },
   "homepage": "https://github.com/NicoleT27/SVG-Logo-Maker#readme",
-  "dependencies": {
-    "inquirer": "^9.2.10",
+  "devDependencies": {
     "jest": "^29.6.4"
   }
 }
