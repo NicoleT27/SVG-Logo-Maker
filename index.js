@@ -1,15 +1,16 @@
-// import inquirer from "inquirer";
 const inquirer = require("inquirer");
+const shapes = require("./lib/shapes");
 
 const logoSpecs = [
   {
     type: "input",
-    name: "letters",
-    message: "Please enter up to three characters you would like for your logo.",
+    name: "text",
+    message:
+      "Please enter up to three characters you would like for your logo.",
   },
   {
     type: "input",
-    name: "color",
+    name: "textColor",
     message:
       "Please enter a color keyword (OR a hexadecimal number)that you would like the text to be in.",
   },
@@ -21,16 +22,23 @@ const logoSpecs = [
   },
   {
     type: "input",
-    name: "color",
+    name: "shapeColor",
     message:
       "Please enter a color keyword (OR a hexadecimal number) for the shape chosen.",
   },
 ];
 
 function createLogo() {
-  inquirer.prompt(logoSpecs).then((data) => {
-    console.log("Generated logo.svg");
-  });
+  inquirer
+    .prompt(logoSpecs)
+    .then((data) => {
+        //  if (err) {
+           return console.log(
+             "Success, Your generated logo.svg file is ready!"
+           );
+    })
+    .catch((error) => {
+        return console.log("Unable to generate logo, please try again");
+    });
 }
-
 createLogo();
