@@ -61,8 +61,8 @@ class Svg {
 }
 // This function will make sure the user either recieves a success message for when they have collected all of the required data
 // or recieve a error message should they not be able to generate their logo
-function writeToFile(fileName, data) {
-  fs.writeFile(fileName, data, (err) => {
+function writeToFile(fileName, svgInstance) {
+  fs.writeFile(fileName, svgInstance.render(), (err) => {
     if (err) {
       return console.log("Unable to generate logo, please try again");
     } else {
@@ -103,7 +103,7 @@ inquirer.prompt(logoSpecs).then((results) => {
    const svgData = svgInstance.render();
 // The writeToFile will allow the data collected to be sent to the logo.svg file that is created once successfull
 // 
-   writeToFile("logo.svg", svgData);
+   writeToFile("logo.svg", svgInstance);
 });
 
 
