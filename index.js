@@ -43,22 +43,6 @@ const logoSpecs = [
   },
 ];
 
-class Svg {
-    constructor(){
-        this.text = "";
-        this.shape = "";
-    }
-    render() {
-        return `${this.text}${this.shape}`;
-    }
-
-    setText(text,color){
-        this.text = text.render();
-    }
-    setShape(shape){
-        this.shape = shape.render();
-    }
-}
 // This function will make sure the user either recieves a success message for when they have collected all of the required data
 // or recieve a error message should they not be able to generate their logo
 function writeToFile(fileName, svgInstance) {
@@ -92,18 +76,21 @@ inquirer.prompt(logoSpecs).then((results) => {
 
   shape.setColor(shapeColor);
 
-  const data = {
-    text:text,
-    color:textColor,
-    shape: shape
-  };
+  // const data = {
+  //   text:text,
+  //   color:textColor,
+  //   shape: logoShape
+  // };
 
 
-   const svgInstance = new Svg(data);
+   const svgInstance = new SVG();
+   svgInstance.setText(text, textColor);
+   svgInstance.setShape(logoShape);
+
    const svgData = svgInstance.render();
+  
 // The writeToFile will allow the data collected to be sent to the logo.svg file that is created once successfull
-// 
-   writeToFile("logo.svg", svgInstance);
+   writeToFile("logo.svg", svgData);
 });
 
 
