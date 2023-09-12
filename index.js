@@ -46,7 +46,7 @@ const logoSpecs = [
 // This function will make sure the user either recieves a success message for when they have collected all of the required data
 // or recieve a error message should they not be able to generate their logo
 function writeToFile(fileName, svgInstance) {
-  fs.writeFile(fileName, svgInstance.render(), (err) => {
+  fs.writeFile(fileName, svgInstance, (err) => {
     if (err) {
       return console.log("Unable to generate logo, please try again");
     } else {
@@ -85,7 +85,7 @@ inquirer.prompt(logoSpecs).then((results) => {
 
    const svgInstance = new SVG();
    svgInstance.setText(text, textColor);
-   svgInstance.setShape(logoShape);
+   svgInstance.setShape(shape);
 
    const svgData = svgInstance.render();
   
