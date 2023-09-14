@@ -2,6 +2,7 @@ const inquirer = require("inquirer");
 const {Triangle, Square, Circle} = require("./lib/shapes.js");
 const fs = require("fs");
 const SVG = require("./lib/svg.js");
+const http = require("http");
 
 
 // Array of questions with inquirer
@@ -75,13 +76,6 @@ inquirer.prompt(logoSpecs).then((results) => {
   }
 
   shape.setColor(shapeColor);
-
-  // const data = {
-  //   text:text,
-  //   color:textColor,
-  //   shape: logoShape
-  // };
-
 
    const svgInstance = new SVG();
    svgInstance.setText(text, textColor);
